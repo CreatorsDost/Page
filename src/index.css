@@ -1,0 +1,288 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --black-gradient: linear-gradient(
+    144.39deg,
+    #ffffff -278.56%,
+    #6d6d6d -78.47%,
+    #11101d 91.61%
+  );
+  --card-shadow: 0px 20px 100px -10px rgba(66, 71, 91, 0.1);
+  --gradient-primary: linear-gradient(135deg, #22d3ee, #06b6d4, #14b8a6);
+  --gradient-dark: linear-gradient(135deg, #111827, #1f2937);
+
+  --page-bg: #09090B;
+  --page-text: #ffffff;
+  --secondary-text: rgba(255, 255, 255, 0.7);
+  --surface: #16151f;
+  --surface-soft: rgba(255, 255, 255, 0.08);
+  --border: rgba(255, 255, 255, 0.12);
+  --card-bg: rgba(22, 21, 31, 0.5);
+  --card-border: rgba(14, 165, 233, 0.3);
+  --toggle-bg: rgba(14, 165, 233, 0.1);
+}
+
+.light {
+  --page-bg: #f8fafc;
+  --page-text: #020617;
+  --secondary-text: rgba(2, 6, 23, 0.75);
+  --surface: #ffffff;
+  --surface-soft: rgba(14, 165, 233, 0.06);
+  --border: rgba(2, 6, 23, 0.12);
+  --card-bg: rgba(255, 255, 255, 0.8);
+  --card-border: rgba(14, 165, 233, 0.2);
+  --toggle-bg: rgba(14, 165, 233, 0.08);
+}
+
+body {
+  background: var(--page-bg);
+  color: var(--page-text);
+}
+
+.bg-page {
+  background: var(--page-bg);
+}
+
+.text-page {
+  color: var(--page-text);
+}
+
+.text-secondary {
+  color: var(--secondary-text);
+}
+
+.bg-surface {
+  background: var(--surface);
+}
+
+.bg-surface-soft {
+  background: var(--surface-soft);
+}
+
+.border-border {
+  border-color: var(--border);
+}
+
+.bg-black-gradient,
+.bg-black-gradient-2,
+.bg-gray-gradient,
+.bg-discount-gradient {
+  background: var(--surface);
+}
+
+section {
+  scroll-margin-top: 5rem;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+.light .bg-dark {
+  background-color: var(--page-bg) !important;
+}
+
+.light .bg-dark\/40 {
+  background-color: rgba(248, 250, 252, 0.35) !important;
+}
+
+.light .bg-dark\/95 {
+  background-color: rgba(248, 250, 252, 0.95) !important;
+}
+
+.light .text-white {
+  color: var(--page-text) !important;
+}
+
+.light .text-white\/60 {
+  color: rgba(2, 6, 23, 0.6) !important;
+}
+
+.light .text-white\/70 {
+  color: rgba(2, 6, 23, 0.7) !important;
+}
+
+.light .text-white\/80 {
+  color: rgba(2, 6, 23, 0.8) !important;
+}
+
+.light .text-white\/40 {
+  color: rgba(2, 6, 23, 0.4) !important;
+}
+
+.light .border-white\/10 {
+  border-color: rgba(2, 6, 23, 0.1) !important;
+}
+
+.light .border-white\/20 {
+  border-color: rgba(2, 6, 23, 0.2) !important;
+}
+
+.light .bg-white\/5 {
+  background-color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.light .bg-white\/10 {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.light .bg-white\/20 {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+}
+
+.light .hover\:bg-white\/10:hover {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.light .hover\:bg-white\/20:hover {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+}
+
+.text-gradient {
+  background: radial-gradient(
+    64.18% 64.18% at 71.16% 35.69%,
+    #def9fa 0.89%,
+    #bef3f5 17.23%,
+    #9dedf0 42.04%,
+    #7de7eb 55.12%,
+    #5ce1e6 71.54%,
+    #33bbcf 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.bg-blue-gradient {
+  background: linear-gradient(
+    157.81deg,
+    #def9fa -43.27%,
+    #bef3f5 -21.24%,
+    #9dedf0 12.19%,
+    #7de7eb 29.82%,
+    #5ce1e6 51.94%,
+    #33bbcf 90.29%
+  );
+}
+
+.bg-card-surface {
+  background: var(--card-bg);
+}
+
+.border-card-border {
+  border-color: var(--card-border);
+}
+
+.bg-black-gradient {
+  background: linear-gradient(
+    144.39deg,
+    #ffffff -278.56%,
+    #6d6d6d -78.47%,
+    #11101d 91.61%
+  );
+}
+
+.bg-black-gradient-2 {
+  background: linear-gradient(
+    -168.39deg,
+    #ffffff -278.56%,
+    #6d6d6d -78.47%,
+    #11101d 91.61%
+  );
+}
+
+.bg-gray-gradient {
+  background: linear-gradient(
+    153.47deg,
+    rgba(255, 255, 255, 0) -341.94%,
+    #14101d 95.11%
+  );
+}
+
+.bg-discount-gradient {
+  background: linear-gradient(125.17deg, #272727 0%, #11101d 100%);
+}
+
+.box-shadow {
+  box-shadow: 0px 20px 100px -10px rgba(66, 71, 91, 0.1);
+}
+
+.sidebar {
+  -webkit-animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@-webkit-keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(100px);
+    transform: translateY(100px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(100px);
+    transform: translateY(100px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.feature-card:hover {
+  background: var(--black-gradient);
+  box-shadow: var(--card-shadow);
+}
+
+.feedback-container .feedback-card:last-child {
+  margin-right: 0px;
+}
+
+.feedback-card {
+  background: transparent;
+}
+
+.feedback-card:hover {
+  background: var(--black-gradient);
+}
+
+.blue__gradient {
+  background: linear-gradient(180deg, rgba(188, 165, 255, 0) 0%, #214d76 100%);
+  filter: blur(123px);
+}
+
+.pink__gradient {
+  background: linear-gradient(90deg, #f4c4f3 0%, #fc67fa 100%);
+  filter: blur(900px);
+}
+
+.white__gradient {
+  background: rgba(255, 255, 255, 0.6);
+  filter: blur(750px);
+}
+
+@layer components {
+  .glass {
+    @apply backdrop-blur-md bg-opacity-10 border border-opacity-20 backdrop-saturate-150;
+  }
+  .glass-card {
+    @apply glass rounded-2xl p-6 md:p-8 bg-white text-white border-white;
+  }
+  .btn-primary {
+    @apply px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 active:scale-95 bg-gradient-primary text-white;
+  }
+  .btn-secondary {
+    @apply px-6 py-3 rounded-lg font-semibold border border-opacity-30 transition-all duration-300 hover:scale-105 active:scale-95 text-white;
+  }
+}
