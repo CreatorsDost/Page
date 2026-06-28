@@ -60,7 +60,7 @@ const Navbar = ({ theme, toggleTheme }) => {
           className="flex items-center gap-2 cursor-pointer"
           whileHover={{ scale: 1.05 }}
         >
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-500 to-teal-500" />
+          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-secondary" />
           <span className="font-inter font-bold text-lg text-white">CreatorsDost</span>
         </motion.div>
 
@@ -85,7 +85,7 @@ const Navbar = ({ theme, toggleTheme }) => {
             href="https://wa.me/YOUR_WHATSAPP_NUMBER?text=Hello%20Creator%27s%20Stack%2C%20I%20would%20like%20to%20book%20a%20call."
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden sm:block px-6 py-2.5 rounded-lg bg-gradient-to-r from-cyan-500 to-teal-500 text-white font-inter font-semibold text-sm hover:shadow-lg hover:shadow-cyan-500/50 transition-all"
+            className="hidden sm:block px-6 py-2.5 rounded-lg bg-gradient-to-r from-primary to-secondary text-white font-inter font-semibold text-sm hover:shadow-lg hover:shadow-primary/50 transition-all"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -148,7 +148,7 @@ const Navbar = ({ theme, toggleTheme }) => {
             href="https://wa.me/YOUR_WHATSAPP_NUMBER?text=Hello%20Creator%27s%20Stack%2C%20I%20would%20like%20to%20book%20a%20call."
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full px-4 py-2 rounded-lg bg-gradient-to-r from-cyan-500 to-teal-500 text-white font-inter font-semibold text-sm text-center mt-2"
+            className="w-full px-4 py-2 rounded-lg bg-gradient-to-r from-primary to-secondary text-white font-inter font-semibold text-sm text-center mt-2"
             whileHover={{ scale: 1.02 }}
           >
             Book a Free Call

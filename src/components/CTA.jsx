@@ -4,7 +4,7 @@ const CTA = () => (
   <section className="relative py-20">
     {/* Background gradient */}
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 via-teal-500/20 to-sky-500/20 blur-3xl" />
+      <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-secondary/20 to-accent/20 blur-3xl" />
     </div>
 
     <div className="max-w-4xl mx-auto px-6 sm:px-16 relative z-10 text-center">
@@ -15,7 +15,7 @@ const CTA = () => (
       >
         <h2 className="font-inter font-bold lg:text-6xl md:text-5xl sm:text-4xl text-3xl text-white mb-6">
           Ready To Build Your{" "}
-          <span className="bg-gradient-to-r from-cyan-400 via-teal-400 to-sky-400 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
             Personal Brand?
           </span>
         </h2>
@@ -35,8 +35,8 @@ const CTA = () => (
             href="https://wa.me/YOUR_WHATSAPP_NUMBER?text=Hello%20Creator%27s%20Stack%2C%20I%20would%20like%20to%20book%20a%20call."
             target="_blank"
             rel="noopener noreferrer"
-            className="px-8 py-4 rounded-lg bg-gradient-to-r from-cyan-500 to-teal-500 text-white font-inter font-semibold transition-all"
-            whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(14, 203, 255, 0.4)" }}
+            className="px-8 py-4 rounded-lg bg-gradient-to-r from-primary to-secondary text-white font-inter font-semibold transition-all"
+            whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(255, 133, 89, 0.4)" }}
             whileTap={{ scale: 0.95 }}
           >
             Book a Free Call

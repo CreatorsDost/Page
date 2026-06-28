@@ -1,5 +1,22 @@
 import { motion } from "framer-motion";
 
+const reelFallbackThumbnail =
+  "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80";
+
+const getInstagramReelThumbnail = (instagramUrl) => {
+  if (!instagramUrl) return null;
+  try {
+    const url = new URL(instagramUrl);
+    const segments = url.pathname.split("/").filter(Boolean);
+    if (segments[0] === "reel" && segments[1]) {
+      return `https://www.instagram.com/reel/${segments[1]}/media/?size=l`;
+    }
+  } catch (error) {
+    return null;
+  }
+  return null;
+};
+
 const featuredReels = [
   {
     id: "reel-1",
@@ -20,8 +37,8 @@ const featuredReels = [
     likes: "142K",
     caption: "Swipe through the exact creative edits that boosted engagement fast.",
     thumbnail:
-      "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80",
-    instagramUrl: "https://www.instagram.com/",
+      "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=80",
+    instagramUrl: "https://www.instagram.com/reel/DTDZA8CAYMO/",
   },
   {
     id: "reel-3",
@@ -69,21 +86,29 @@ const featuredReels = [
   },
 ];
 
-const ReelCard = ({ badge, title, views, likes, caption, thumbnail, instagramUrl }) => (
-  <motion.div
-    className="group rounded-[28px] border border-white/10 bg-white/5 shadow-2xl shadow-pink-500/5 backdrop-blur-2xl overflow-hidden transition duration-300 hover:-translate-y-2 hover:border-transparent hover:shadow-pink-500/20"
-    whileHover={{ y: -8 }}
-    initial={{ opacity: 0, y: 24 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true, amount: 0.2 }}
-    transition={{ duration: 0.4, ease: "easeOut" }}
-  >
-    <div className="relative overflow-hidden rounded-[28px] bg-gradient-to-br from-purple-700 via-fuchsia-700 to-pink-600 p-[2px]">
+const ReelCard = ({ badge, title, views, likes, caption, thumbnail, instagramUrl }) => {
+  const finalThumbnail =
+    thumbnail || getInstagramReelThumbnail(instagramUrl) || reelFallbackThumbnail;
+
+  return (
+    <motion.div
+      className="group rounded-[28px] border border-white/10 bg-white/5 shadow-2xl shadow-primary/5 backdrop-blur-2xl overflow-hidden transition duration-300 hover:-translate-y-2 hover:border-transparent hover:shadow-primary/20"
+      whileHover={{ y: -8 }}
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.4, ease: "easeOut" }}
+    >
+    <div className="relative overflow-hidden rounded-[28px] bg-gradient-to-br from-primary via-secondary to-accent-pink p-[2px]">
       <div className="relative overflow-hidden rounded-[26px] bg-slate-950">
         <img
-          src={thumbnail}
+          src={finalThumbnail}
           alt={title}
           loading="lazy"
+          onError={(event) => {
+            event.currentTarget.onerror = null;
+            event.currentTarget.src = reelFallbackThumbnail;
+          }}
           className="h-[420px] w-full object-cover transition duration-500 group-hover:scale-105"
         />
 
@@ -127,19 +152,20 @@ const ReelCard = ({ badge, title, views, likes, caption, thumbnail, instagramUrl
         href={instagramUrl}
         target="_blank"
         rel="noreferrer"
-        className="inline-flex w-full items-center justify-center rounded-full border border-white/10 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition duration-300 hover:border-transparent hover:bg-fuchsia-500/20 hover:text-white"
+        className="inline-flex w-full items-center justify-center rounded-full border border-white/10 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition duration-300 hover:border-transparent hover:bg-orange-500 hover:text-white"
       >
         Watch Reel
       </a>
     </div>
   </motion.div>
 );
+};
 
 const FeaturedReels = () => (
   <section id="featured-reels" className="relative py-20">
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      <div className="absolute -top-24 left-1/2 h-80 w-80 -translate-x-1/2 rounded-full bg-pink-500/10 blur-3xl" />
-      <div className="absolute bottom-0 right-16 h-80 w-80 rounded-full bg-violet-500/10 blur-3xl" />
+      <div className="absolute -top-24 left-1/2 h-80 w-80 -translate-x-1/2 rounded-full bg-primary/10 blur-3xl" />
+      <div className="absolute bottom-0 right-16 h-80 w-80 rounded-full bg-accent-pink/10 blur-3xl" />
     </div>
 
     <div className="max-w-7xl mx-auto px-6 sm:px-16 relative z-10">
@@ -150,7 +176,7 @@ const FeaturedReels = () => (
         viewport={{ once: true }}
         transition={{ duration: 0.5, ease: "easeOut" }}
       >
-        <p className="mb-4 text-sm uppercase tracking-[0.32em] text-pink-300/80">
+        <p className="mb-4 text-sm uppercase tracking-[0.32em] text-primary/80">
           Featured Reels
         </p>
         <h2 className="font-inter font-bold lg:text-5xl md:text-4xl sm:text-3xl text-3xl text-white mb-5">
@@ -173,7 +199,7 @@ const FeaturedReels = () => (
           href="https://www.instagram.com/"
           target="_blank"
           rel="noreferrer"
-          className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 px-8 py-4 text-sm font-semibold text-white transition duration-300 hover:border-transparent hover:bg-fuchsia-500/20"
+          className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 px-8 py-4 text-sm font-semibold text-white transition duration-300 hover:border-transparent hover:bg-accent/20"
           whileHover={{ y: -2 }}
           whileTap={{ scale: 0.98 }}
         >

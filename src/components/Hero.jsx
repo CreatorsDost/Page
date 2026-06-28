@@ -25,9 +25,9 @@ const Hero = () => {
     >
       {/* Gradient Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-0 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-teal-500/20 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl" />
+        <div className="absolute top-20 left-0 w-96 h-96 bg-primary/20 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-secondary/20 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
       </div>
 
       <div className="max-w-7xl mx-auto px-6 sm:px-16 grid md:grid-cols-2 gap-12 items-center relative z-10">
@@ -41,30 +41,38 @@ const Hero = () => {
         >
           {/* Badge */}
           <motion.div
-            className="w-fit px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/30 flex items-center gap-2"
+            className="w-fit px-4 py-2 rounded-full bg-primary/10 border border-primary/30 flex items-center gap-2"
             variants={itemVariants}
           >
-            <span className="text-cyan-400 text-sm font-medium">✨ New</span>
+            <span className="text-primary text-sm font-medium">✨ New</span>
             <span className="text-white/70 text-sm">AI-powered content strategy</span>
           </motion.div>
 
           {/* Main Headline */}
           <motion.div variants={itemVariants}>
-            <h1 className={`${styles.heading1} mb-4`}>
-              Grow Smarter.
+            <h1 className="font-bold text-5xl mt-4 mb-4">
+              Your Job Pays the Bills
               <br />
-              <span className="bg-gradient-to-r from-cyan-400 via-teal-400 to-sky-400 bg-clip-text text-transparent">
-                Not Harder.
+              <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
+                Your Personal Brand Builds Your Future.
               </span>
             </h1>
           </motion.div>
 
           {/* Subheading */}
           <motion.p
-            className={`${styles.paragraph} max-w-md text-white/70`}
+            className="max-w-lg text-slate-200/80 text-base md:text-lg lg:text-xl leading-8 md:leading-10 tracking-wide"
             variants={itemVariants}
           >
-            Stop guessing what to post. CreatorsDost helps influencers create content that gets discovered, builds loyal audiences, and grows consistently.
+            <span className="block text-white/80">
+              CreatorsDost helps busy professionals become recognized creators through research-driven content, strategic storytelling, and end-to-end content execution.
+            </span>
+            <span className="block mt-5 text-white font-semibold text-lg md:text-xl lg:text-2xl">
+              You bring the expertise.
+            </span>
+            <span className="block mt-3 text-white font-semibold text-lg md:text-xl lg:text-2xl">
+              We build the brand.
+            </span>
           </motion.p>
 
           {/* CTA Buttons */}
@@ -73,8 +81,8 @@ const Hero = () => {
               href="https://wa.me/YOUR_WHATSAPP_NUMBER?text=Hello%20Creator%27s%20Stack%2C%20I%20would%20like%20to%20book%20a%20call."
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-3 rounded-lg bg-gradient-to-r from-cyan-500 to-teal-500 text-white font-inter font-semibold transition-all"
-              whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(14, 203, 255, 0.4)" }}
+              className="px-8 py-3 rounded-lg bg-gradient-to-r from-primary to-secondary text-white font-inter font-semibold transition-all"
+              whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(255, 133, 89, 0.4)" }}
               whileTap={{ scale: 0.95 }}
             >
               Book a Call
@@ -116,12 +124,12 @@ const Hero = () => {
           transition={{ duration: 1, type: "spring", stiffness: 50 }}
         >
           <div className="absolute inset-0 flex items-end justify-center">
-            <div className="absolute bottom-6 left-1/2 h-20 w-[78%] -translate-x-1/2 rounded-full bg-cyan-400/20 blur-3xl" />
+            <div className="absolute bottom-6 left-1/2 h-20 w-[78%] -translate-x-1/2 rounded-full bg-primary/20 blur-3xl" />
             <div className="absolute bottom-2 left-1/2 h-12 w-[68%] -translate-x-1/2 rounded-full bg-slate-950/70 blur-2xl" />
           </div>
 
           <motion.div
-            className="absolute left-1/2 top-6 -translate-x-1/2 z-20 w-56 rounded-[24px] border border-cyan-400/20 bg-slate-900/80 p-4 shadow-[0_20px_60px_rgba(0,0,0,0.35)] backdrop-blur-xl"
+            className="absolute left-1/2 top-6 -translate-x-1/2 z-20 w-56 rounded-[24px] border border-primary/20 bg-slate-900/80 p-4 shadow-[0_20px_60px_rgba(0,0,0,0.35)] backdrop-blur-xl"
             animate={{ y: [0, -10, 0], rotate: [0, 1, -1, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
           >
@@ -132,7 +140,7 @@ const Hero = () => {
             <div className="mt-3 text-3xl font-semibold text-white">45.2K</div>
             <div className="mt-3 h-2 overflow-hidden rounded-full bg-white/10">
               <motion.div
-                className="h-full rounded-full bg-gradient-to-r from-cyan-400 to-teal-400"
+                className="h-full rounded-full bg-gradient-to-r from-primary to-secondary"
                 initial={{ width: "30%" }}
                 whileInView={{ width: "80%" }}
                 transition={{ duration: 1.6 }}
@@ -149,8 +157,8 @@ const Hero = () => {
             animate={{ y: [0, 10, 0], rotate: [0, -1, 1, 0] }}
             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
           >
-            <div className="flex items-center gap-3">
-              <div className="h-10 w-10 rounded-full bg-gradient-to-br from-fuchsia-500 to-cyan-400" />
+              <div className="flex items-center gap-3">
+                <div className="h-10 w-10 rounded-full bg-gradient-to-br from-fuchsia-500 to-primary" />
               <div>
                 <p className="text-sm font-semibold text-white">@creatorstack</p>
                 <p className="text-xs text-white/60">4.8K posts</p>
@@ -163,7 +171,7 @@ const Hero = () => {
             </div>
             <div className="mt-3 flex items-center justify-between text-xs text-white/70">
               <span>Stories</span>
-              <span className="text-cyan-300">Live</span>
+              <span className="text-primary">Live</span>
             </div>
           </motion.div>
 
@@ -172,21 +180,21 @@ const Hero = () => {
             animate={{ y: [0, -6, 0], rotate: [-8, -6, -8] }}
             transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
           >
-            <div className="relative h-[300px] w-[180px] rounded-[2.2rem] border border-white/10 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700 p-2 shadow-[0_35px_90px_rgba(0,0,0,0.4)]">
-              <div className="absolute inset-0 rounded-[2.2rem] bg-gradient-to-br from-cyan-400/20 via-transparent to-teal-400/10" />
+              <div className="relative h-[300px] w-[180px] rounded-[2.2rem] border border-white/10 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700 p-2 shadow-[0_35px_90px_rgba(0,0,0,0.4)]">
+              <div className="absolute inset-0 rounded-[2.2rem] bg-gradient-to-br from-primary/20 via-transparent to-secondary/10" />
               <div className="relative h-full w-full overflow-hidden rounded-[1.8rem] border border-white/10 bg-slate-950 p-3">
-                <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-cyan-400/20 to-transparent" />
+                <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-primary/20 to-transparent" />
                 <div className="absolute left-1/2 top-3 h-1.5 w-16 -translate-x-1/2 rounded-full bg-white/15" />
                 <div className="relative flex items-center gap-2">
-                  <div className="h-8 w-8 rounded-full bg-gradient-to-br from-fuchsia-500 to-cyan-400" />
+                  <div className="h-8 w-8 rounded-full bg-gradient-to-br from-fuchsia-500 to-primary" />
                   <div>
                     <p className="text-xs font-semibold text-white">Instagram</p>
                     <p className="text-[10px] text-white/50">Reels • Live</p>
                   </div>
                 </div>
 
-                <div className="mt-4 rounded-2xl border border-cyan-400/20 bg-cyan-400/10 p-3">
-                  <div className="flex items-center justify-between text-[10px] uppercase tracking-[0.25em] text-cyan-200/80">
+                <div className="mt-4 rounded-2xl border border-primary/20 bg-primary/10 p-3">
+                  <div className="flex items-center justify-between text-[10px] uppercase tracking-[0.25em] text-primary/80">
                     <span>Reach</span>
                     <span>Now</span>
                   </div>
@@ -199,12 +207,12 @@ const Hero = () => {
                     <span className="text-white">18.2K</span>
                   </div>
                   <div className="mt-2 h-2 overflow-hidden rounded-full bg-white/10">
-                    <div className="h-full w-[78%] rounded-full bg-gradient-to-r from-cyan-400 to-teal-400" />
+                    <div className="h-full w-[78%] rounded-full bg-gradient-to-r from-primary to-secondary" />
                   </div>
                 </div>
 
                 <motion.div
-                  className="absolute inset-x-4 bottom-4 rounded-full bg-cyan-400/25 blur-3xl"
+                  className="absolute inset-x-4 bottom-4 rounded-full bg-primary/25 blur-3xl"
                   animate={{ scale: [1, 1.15, 1] }}
                   transition={{ duration: 2.8, repeat: Infinity }}
                 />
@@ -213,7 +221,7 @@ const Hero = () => {
           </motion.div>
 
           <motion.div
-            className="absolute bottom-6 left-1/2 h-14 w-[220px] -translate-x-1/2 rounded-full bg-cyan-400/20 blur-2xl"
+            className="absolute bottom-6 left-1/2 h-14 w-[220px] -translate-x-1/2 rounded-full bg-primary/20 blur-2xl"
             animate={{ opacity: [0.35, 0.65, 0.35] }}
             transition={{ duration: 2.6, repeat: Infinity }}
           />

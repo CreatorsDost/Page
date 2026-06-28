@@ -43,7 +43,7 @@ const Footer = () => {
             viewport={{ once: true }}
           >
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-500 to-teal-500" />
+              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-secondary" />
               <span className="font-inter font-bold text-lg text-white">CreatorsDost</span>
             </div>
             <p className="font-inter font-normal text-white/60 max-w-sm leading-relaxed">
@@ -65,9 +65,9 @@ const Footer = () => {
               <input
                 type="email"
                 placeholder="your@email.com"
-                className="flex-1 px-4 py-2 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/40 font-inter focus:outline-none focus:border-cyan-500/50"
+                className="flex-1 px-4 py-2 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/40 font-inter focus:outline-none focus:border-primary/50"
               />
-              <button className="px-4 py-2 rounded-lg bg-gradient-to-r from-cyan-500 to-teal-500 text-white font-inter font-semibold hover:shadow-lg transition-all">
+              <button className="px-4 py-2 rounded-lg bg-gradient-to-r from-primary to-secondary text-white font-inter font-semibold hover:shadow-lg transition-all">
                 Subscribe
               </button>
             </div>
