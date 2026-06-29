@@ -7,8 +7,8 @@ const styles = {
   heading3: "font-inter font-semibold lg:text-3xl md:text-2xl sm:text-xl text-lg text-white w-full",
   
   // Typography
-  paragraph: "font-inter font-normal text-white/70 text-lg leading-relaxed",
-  paragraphSmall: "font-inter font-normal text-white/60 text-base leading-relaxed",
+  paragraph: "font-inter font-normal text-white/70 text-base leading-relaxed",
+  paragraphSmall: "font-inter font-normal text-white/60 text-sm leading-relaxed",
 
   flexCenter: "flex justify-center items-center",
   flexStart: "flex justify-start items-start",

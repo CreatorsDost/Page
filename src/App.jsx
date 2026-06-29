@@ -13,7 +13,7 @@ const App = () => {
   return (
     <div className="w-full overflow-hidden bg-page">
       {/* Fixed Navbar */}
-      <Navbar theme={theme} toggleTheme={toggleTheme} />
+      <Navbar theme={theme}  />
 
       {/* Main Content */}
       <main className="pt-20">

@@ -15,7 +15,7 @@ const faqs = [
   {
     id: 3,
     question: "Do you edit videos?",
-    answer: "Yes! Depending on your plan, we provide professional editing for short-form videos (Reels, Shorts, TikToks). Starter Stack includes basic support, while Growth Stack and Creator Pro include full editing with captions, effects, and optimization.",
+    answer: "Yes! Depending on your plan, we provide professional editing for short-form insta reels. Starter Stack includes basic support, while Growth Stack and Creator Pro include editing with captions, effects, and optimization.",
   },
   {
     id: 4,
@@ -25,12 +25,12 @@ const faqs = [
   {
     id: 5,
     question: "How often do we meet?",
-    answer: "It depends on your plan. Starter Stack includes 1 monthly call, Growth Stack includes weekly calls, and Creator Pro includes unlimited consultation. You can also book extra calls anytime.",
+    answer: "It depends on your plan. Starter Stack includes 1 monthly call, Growth Stack includes 2 monthly calls, and Creator Pro includes weekly consultation. You can also book extra calls anytime.",
   },
   {
     id: 6,
     question: "What platforms do you support?",
-    answer: "We specialize in Instagram, TikTok, YouTube Shorts, and Facebook Reels. Our strategies are tailored for short-form video content, but we also support long-form content strategies on YouTube.",
+    answer: "Currently, Creator's Stack focuses exclusively on Instagram to provide the best possible growth strategies. We plan to expand to YouTube in the future as we continue to grow.",
   },
 ];
 

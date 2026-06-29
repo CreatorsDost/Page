@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { close, menu } from "../assets";
+import { close, menu, logo } from "../assets";
 import { navLinks } from "../constants";
 
 const Navbar = ({ theme, toggleTheme }) => {
@@ -60,7 +60,11 @@ const Navbar = ({ theme, toggleTheme }) => {
           className="flex items-center gap-2 cursor-pointer"
           whileHover={{ scale: 1.05 }}
         >
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-secondary" />
+          <img
+            src={logo}
+            alt="CreatorsDost"
+            className="w-8 h-8 rounded-lg object-cover"
+          />
           <span className="font-inter font-bold text-lg text-white">CreatorsDost</span>
         </motion.div>
 
@@ -92,16 +96,7 @@ const Navbar = ({ theme, toggleTheme }) => {
           Contact Us
           </motion.a>
 
-          {/* Theme Toggle */}
-          <motion.button
-            type="button"
-            onClick={toggleTheme}
-            className="hidden sm:flex items-center justify-center w-10 h-10 rounded-lg border border-white/20 hover:bg-white/10 transition-colors"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            {theme === "dark" ? "☀️" : "🌙"}
-          </motion.button>
+       
 
           {/* Mobile Menu Button */}
           <motion.button

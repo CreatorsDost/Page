@@ -26,7 +26,7 @@ const features = [
     id: "research",
     icon: "🔎",
     title: "Research",
-    description: "Personalized content plans based on your niche and audience.",
+    description: "Comprehensive niche, audience, and competitor research to build a winning growth strategy.",
   },
   {
     id: "content-strategy",

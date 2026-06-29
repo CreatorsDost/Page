@@ -1,4 +1,8 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
+import { AiFillInstagram } from "react-icons/ai";
+import { FaLinkedin } from "react-icons/fa";
+import { FiMail } from "react-icons/fi";
 
 const Footer = () => {
   const footerLinks = [
@@ -20,13 +24,15 @@ const Footer = () => {
     },
     {
       title: "Connect",
-      links: [
+        links: [
         { name: "Instagram", href: "https://instagram.com" },
         { name: "LinkedIn", href: "https://linkedin.com" },
-        { name: "Email", href: "mailto:hello@creatorstack.com" },
+        { name: "Email", href: "mailto:creatorsdost5@gmail.com" },
       ],
     },
   ];
+
+  const [subscriberEmail, setSubscriberEmail] = useState("");
 
   return (
     <footer className="relative pt-20 pb-12">
@@ -43,7 +49,11 @@ const Footer = () => {
             viewport={{ once: true }}
           >
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-secondary" />
+              <img
+                src="/src/assets/CDlogo.png"
+                alt="CreatorsDost"
+                className="w-8 h-8 rounded-lg object-cover"
+              />
               <span className="font-inter font-bold text-lg text-white">CreatorsDost</span>
             </div>
             <p className="font-inter font-normal text-white/60 max-w-sm leading-relaxed">
@@ -61,16 +71,28 @@ const Footer = () => {
             <p className="font-inter font-normal text-white/60 mb-4 text-sm">
               Get tips, strategies, and updates straight to your inbox.
             </p>
-            <div className="flex gap-2">
-              <input
-                type="email"
-                placeholder="your@email.com"
-                className="flex-1 px-4 py-2 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/40 font-inter focus:outline-none focus:border-primary/50"
-              />
-              <button className="px-4 py-2 rounded-lg bg-gradient-to-r from-primary to-secondary text-white font-inter font-semibold hover:shadow-lg transition-all">
-                Subscribe
-              </button>
-            </div>
+              <div className="flex gap-2">
+                <input
+                  type="email"
+                  value={subscriberEmail}
+                  onChange={(e) => setSubscriberEmail(e.target.value)}
+                  placeholder="your@email.com"
+                  className="flex-1 px-4 py-2 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/40 font-inter focus:outline-none focus:border-primary/50"
+                />
+                <button
+                  onClick={() => {
+                    const recipient = "creatorsdost5@gmail.com";
+                    const subject = encodeURIComponent("Subscribe to CreatorsDost");
+                    const body = encodeURIComponent(
+                      `Please subscribe this address: ${subscriberEmail || "(no email entered)"}`
+                    );
+                    window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
+                  }}
+                  className="px-4 py-2 rounded-lg bg-gradient-to-r from-primary to-secondary text-white font-inter font-semibold hover:shadow-lg transition-all"
+                >
+                  Subscribe
+                </button>
+              </div>
           </motion.div>
         </div>
 
@@ -110,21 +132,21 @@ const Footer = () => {
 
           <div className="flex gap-4">
             {[
-              { name: "Instagram", emoji: "📸", href: "https://instagram.com" },
-              { name: "LinkedIn", emoji: "💼", href: "https://linkedin.com" },
-              { name: "Twitter", emoji: "𝕏", href: "https://twitter.com" },
+              { name: "Instagram", icon: <AiFillInstagram className="h-6 w-6" />, href: "https://www.instagram.com/creatorsdost/" },
+              { name: "LinkedIn", icon: <FaLinkedin className="h-6 w-6" />, href: "https://linkedin.com" },
+              { name: "Email", icon: <FiMail className="h-6 w-6" />, href: "mailto:creatorsdost5@gmail.com" },
             ].map((social) => (
               <motion.a
                 key={social.name}
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center text-xl hover:bg-white/20 hover:border-white/30 transition-all"
+                className="w-10 h-10 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center text-white hover:bg-white/20 hover:border-white/30 transition-all"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
                 title={social.name}
               >
-                {social.emoji}
+                {social.icon}
               </motion.a>
             ))}
           </div>
@@ -133,5 +155,5 @@ const Footer = () => {
     </footer>
   );
 };
-
+  
 export default Footer;
