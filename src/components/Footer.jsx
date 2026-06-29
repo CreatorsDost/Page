@@ -3,6 +3,7 @@ import { useState } from "react";
 import { AiFillInstagram } from "react-icons/ai";
 import { FaLinkedin } from "react-icons/fa";
 import { FiMail } from "react-icons/fi";
+import { logo } from "../assets";
 
 const Footer = () => {
   const footerLinks = [
@@ -50,7 +51,7 @@ const Footer = () => {
           >
             <div className="flex items-center gap-3 mb-4">
               <img
-                src="/src/assets/CDlogo.png"
+                src={logo}
                 alt="CreatorsDost"
                 className="w-8 h-8 rounded-lg object-cover"
               />

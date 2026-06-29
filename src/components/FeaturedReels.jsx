@@ -1,4 +1,10 @@
 import { motion } from "framer-motion";
+import reel1Svg from "../assets/reel_1.svg";
+import reel7 from "../assets/reel_7.png";
+import reel3 from "../assets/reel3.png";
+import reel5 from "../assets/reel5.png";
+import reel4 from "../assets/reel4.png";
+import reel6 from "../assets/reel6.png";
 
 const reelFallbackThumbnail =
   "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80";
@@ -24,7 +30,7 @@ const featuredReels = [
     views: "3.6M",
     likes: "228K",
     caption: "Learn why this reel exploded and how creators can replicate the format.",
-    thumbnail: "src/assets/reel_1.svg",
+    thumbnail: reel1Svg,
     instagramUrl: "https://www.instagram.com/reel/DTDZA8CAYMO/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
   },
   {
@@ -34,7 +40,7 @@ const featuredReels = [
     views: "1.1M",
     likes: "52K",
     caption: "Swipe through the exact creative edits that boosted engagement fast.",
-    thumbnail: "/src/assets/reel_7.png",
+    thumbnail: reel7,
     instagramUrl: "https://www.instagram.com/reel/DTaK0lAAYGD/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
   },
   {
@@ -44,7 +50,7 @@ const featuredReels = [
     views: "618K",
     likes: "8.9K",
     caption: "The posting strategy that turned one clip into a creator funnel.",
-    thumbnail: "/src/assets/reel3.png",
+    thumbnail: reel3,
     instagramUrl:
       "https://www.instagram.com/reel/DYaB1ukvy_T/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
   },
@@ -55,7 +61,7 @@ const featuredReels = [
     views: "777K",
     likes: "9802",
     caption: "A look at the storytelling move that kept viewers glued.",
-    thumbnail: "/src/assets/reel5.png",
+    thumbnail: reel5,
     instagramUrl: "https://www.instagram.com/reel/DZ2Zjpmh5V2/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
   },
 
@@ -66,7 +72,7 @@ const featuredReels = [
     views: "173K",
     likes: "3901",
     caption: "A repeatable formula for high-retention short-form content.",
-    thumbnail: "/src/assets/reel4.png",
+    thumbnail: reel4,
     instagramUrl:
       "https://www.instagram.com/reel/DUYjsGtD_mD/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
   },
@@ -77,7 +83,7 @@ const featuredReels = [
     views: "686K",
     likes: "43.1K",
     caption: "Why this caption made the reel feel personal and shareable.",
-    thumbnail: "/src/assets/reel6.png",
+    thumbnail: reel6,
     instagramUrl: "https://www.instagram.com/reel/DSxRgJlAYnN/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
   },
 ];
