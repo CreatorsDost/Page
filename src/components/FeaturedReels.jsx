@@ -24,7 +24,7 @@ const featuredReels = [
     views: "3.6M",
     likes: "228K",
     caption: "Learn why this reel exploded and how creators can replicate the format.",
-    thumbnail: "src/assets/reel_1.png",
+    thumbnail: "src/assets/reel_1.svg",
     instagramUrl: "https://www.instagram.com/reel/DTDZA8CAYMO/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
   },
   {
