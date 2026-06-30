@@ -1,54 +1,61 @@
-import { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { arman, manish, pavan, robot, shweta } from "../assets";
 
 const testimonials = [
   {
     id: 1,
-    name: "Sarah Chen",
-    role: "Beauty & Lifestyle Creator",
+    name: "Arman Gupta (21K Followers)",
+    role: "Software Engineer | Gurugram",
     rating: 5,
-    text: "CreatorsDost transformed my content strategy. I went from 10K to 100K followers in 6 months. The editing support alone is worth it!",
+    image: arman,
+    text: "I've wanted to start creating content for over a year, but I never had time to research topics or write scripts after work. \
+    CreatorsDost gave me a clear content plan every week, and all I had to do was record. The process became effortless.",
   },
   {
     id: 2,
-    name: "Alex Rodriguez",
-    role: "Tech Influencer",
+    name: "Manish Gupta (6K Followers)",
+    role: "Teacher | Chandigarh",
     rating: 5,
-    text: "The weekly strategy calls are goldmines. The team truly understands viral content and audience psychology. Highly recommend!",
+    image: manish,
+    text: "The biggest difference was the strategy. Instead of random content ideas, every post had a purpose. My LinkedIn profile \
+    became much more active, and I finally started posting consistently.",
   },
   {
     id: 3,
-    name: "Priya Patel",
-    role: "Fitness Content Creator",
+    name: "Shweta Arora (23K Followers)",
+    role: "Fashion & Lifestyle Creator",
     rating: 5,
-    text: "Best investment I made for my channel. The personalized content ideas hit every single time. Engagement up 300%!",
+    image: shweta,
+    text: "CreatorsDost has made content creation feel much more organized. Whenever I get stuck, they come up with fresh concepts \
+    and make the whole content planning process much easier. Their script suggestions, creative inputs and consistency-focused approach \
+    make it much easier to grow your personal brand without constantly wondering what to post next.",
   },
   {
     id: 4,
-    name: "James Wilson",
-    role: "Gaming & Streaming Creator",
+    name: "Pavan (4K Followers)",
+    role: "Student(IIT Delhi) & Aspiring Creator",
     rating: 5,
-    text: "From struggling to find content ideas to having a complete pipeline. CreatorsDost handles everything beautifully.",
+    image: pavan,
+    text: "CeatorsDost bhai crazzzzyyyy hai. Matlab saara kuch provide kar rahe hai even brand promotions bhi :)\
+    Mujeh kuch bhi karne ki tension nahi hai. Bas content create karna hai aur upload karna hai.\
+    CreatorsDost is the best platform for creators. I am loving it.",
   },
-  {
-    id: 5,
-    name: "Zara Khan",
-    role: "Fashion & Lifestyle Creator",
-    rating: 5,
-    text: "The editing support saved me so much time. More time creating, less time editing. Living the dream!",
-  },
-  {
-    id: 6,
-    name: "Marcus Johnson",
-    role: "Motivational Speaker & Creator",
-    rating: 5,
-    text: "The growth consulting is on another level. Actionable insights every call. Worth every rupee!",
-  },
+
 ];
 
-const TestimonialCard = ({ name, role, rating, text }) => (
+const duplicatedTestimonials = [...testimonials, ...testimonials];
+
+const getInitials = (name) =>
+  name
+    .split(" ")
+    .map((word) => word[0])
+    .join("")
+    .slice(0, 2)
+    .toUpperCase();
+
+const TestimonialCard = ({ name, role, rating, text, image }) => (
   <motion.div
-    className="flex-shrink-0 w-full sm:w-96 p-6 rounded-2xl backdrop-blur-sm bg-white/5 border border-white/10 hover:bg-white/10 transition-all h-full flex flex-col"
+    className="flex-shrink-0 w-[85vw] sm:w-96 p-6 rounded-2xl backdrop-blur-sm bg-white/5 border border-white/10 hover:bg-white/10 transition-all h-full flex flex-col"
     whileHover={{ y: -5 }}
   >
     {/* Stars */}
@@ -64,38 +71,47 @@ const TestimonialCard = ({ name, role, rating, text }) => (
     </p>
 
     {/* Author */}
-    <div className="border-t border-white/10 pt-4">
-      <p className="font-inter font-semibold text-white text-sm">{name}</p>
-      <p className="font-inter font-normal text-white/60 text-xs">{role}</p>
+    <div className="border-t border-white/10 pt-4 flex items-center gap-3">
+      {image ? (
+        <img
+          src={image}
+          alt={name}
+          className="w-10 h-10 rounded-full object-cover border border-white/20 shadow-lg"
+        />
+      ) : (
+        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary via-secondary to-accent flex items-center justify-center text-sm font-semibold text-white shadow-lg">
+          {getInitials(name)}
+        </div>
+      )}
+      <div>
+        <p className="font-inter font-semibold text-white text-sm">{name}</p>
+        <p className="font-inter font-normal text-white/60 text-xs">{role}</p>
+      </div>
     </div>
   </motion.div>
 );
 
 const Testimonials = () => {
-  const scrollContainerRef = useRef(null);
-  const [isAutoScrolling, setIsAutoScrolling] = useState(true);
-
-  useEffect(() => {
-    if (!isAutoScrolling || !scrollContainerRef.current) return;
-
-    const scrollContainer = scrollContainerRef.current;
-    let scrollAmount = 0;
-    const scrollSpeed = 1;
-    const containerWidth = scrollContainer.scrollWidth - scrollContainer.clientWidth;
-
-    const interval = setInterval(() => {
-      scrollAmount += scrollSpeed;
-      if (scrollAmount >= containerWidth) {
-        scrollAmount = 0;
-      }
-      scrollContainer.scrollLeft = scrollAmount;
-    }, 50);
-
-    return () => clearInterval(interval);
-  }, [isAutoScrolling]);
-
   return (
     <section id="testimonials" className="relative py-20">
+      <style>{`
+        .testimonial-marquee {
+          animation: testimonial-marquee 24s linear infinite;
+        }
+
+        .testimonial-marquee:hover {
+          animation-play-state: paused;
+        }
+
+        @keyframes testimonial-marquee {
+          from {
+            transform: translateX(0);
+          }
+          to {
+            transform: translateX(-50%);
+          }
+        }
+      `}</style>
       {/* Background gradient */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
@@ -121,26 +137,24 @@ const Testimonials = () => {
         </motion.div>
 
         {/* Testimonials Carousel */}
-        <motion.div
-          ref={scrollContainerRef}
-          className="flex gap-6 overflow-x-auto pb-4 scroll-smooth"
-          style={{ scrollBehavior: "smooth" }}
-          onMouseEnter={() => setIsAutoScrolling(false)}
-          onMouseLeave={() => setIsAutoScrolling(true)}
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-        >
-          {testimonials.map((testimonial) => (
-            <TestimonialCard key={testimonial.id} {...testimonial} />
-          ))}
-        </motion.div>
+        <div className="relative">
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-[#050816] via-[#050816]/70 to-transparent z-20" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-[#050816] via-[#050816]/70 to-transparent z-20" />
 
-        {/* Scroll Indicator */}
-        <div className="text-center mt-8">
-          <p className="font-inter font-normal text-white/40 text-sm">
-            ← Scroll to see more →
-          </p>
+          <div className="overflow-hidden">
+            <motion.div
+              className="testimonial-marquee flex w-max gap-6 py-2"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+            >
+              {duplicatedTestimonials.map((testimonial, index) => (
+                <div key={`${testimonial.id}-${index}`} className="flex-shrink-0">
+                  <TestimonialCard {...testimonial} />
+                </div>
+              ))}
+            </motion.div>
+          </div>
         </div>
       </div>
     </section>

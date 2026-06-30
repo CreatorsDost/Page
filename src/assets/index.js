@@ -7,6 +7,10 @@ import dropbox from "./dropbox.png";
 import logo from "./CDlogo.png";
 import quotes from "./quotes.svg";
 import robot from "./robot3.png";
+import arman from "./armaan.png";
+import manish from "./manish.png";
+import shweta from "./shweta.png";
+import pavan from "./pavan.png";
 import send from "./Send.svg";
 import shield from "./Shield.svg";
 import star from "./Star.svg";
@@ -32,6 +36,10 @@ export {
   logo,
   quotes,
   robot,
+  arman,
+  manish,
+  shweta,
+  pavan,
   send,
   shield,
   star,
